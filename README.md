@@ -14,7 +14,7 @@ Install dependencies with:
 $ npm install
 ```
 
-Start development with dev-{yourOS} script (defined in packages.json).
+Start development with dev-{yourOS} script (defined in package.json).
 ```sh
 $ npm run dev-windows
 $ npm run dev-linux
