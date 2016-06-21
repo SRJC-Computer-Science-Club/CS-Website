@@ -1,3 +1,12 @@
+/* Filename: app.js
+ * Description: Index file for Node application.
+ */
+
+// Set environment variables from .env
+//   https://www.npmjs.com/package/dotenv
+//   http://12factor.net/config
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -38,7 +47,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -58,5 +67,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// Get port from environment and store in Express.
+var port = process.env.PORT || '3000';
+app.set('port', port);
 
-module.exports = app;
+// Listen on PORT
+app.listen(port);
