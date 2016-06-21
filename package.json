@@ -9,7 +9,7 @@
     "watch-server": "nodemon ./bin/www",
     "dev-windows": "start npm run watch-css && start npm run watch-server",
     "dev-linux": "npm run watch-css & npm run watch-server",
-    "deploy": "git checkout stage && git pull origin stage && git rebase dev && npm run build-css && git add public/css/main.css -f && git commit -m \"Build CSS\" && git push origin stage && git checkout dev"
+    "deploy": "git checkout stage && git pull origin stage && git rebase origin/dev && npm run build-css && git add public/css/main.css -f && git commit -m \"Build CSS\" && git push origin stage && git checkout dev"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
