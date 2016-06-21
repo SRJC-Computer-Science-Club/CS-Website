@@ -7,6 +7,8 @@ Want to contribute? Great!
 
 **Be sure to have [Node][node] installed.**
 
+Open terminal in root directory of project.
+
 Install dependencies with:
 ```sh
 $ npm install
