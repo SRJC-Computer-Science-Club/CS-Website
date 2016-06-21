@@ -16,6 +16,7 @@ $white: #FEFEFE;
 
 body {
   font: 14px $font-stack !important;
+  padding-top: 5rem;
 }
 
 a {
@@ -32,6 +33,13 @@ a {
 ////////////////////////////////////
 // Begin explicit class/id styles //
 ////////////////////////////////////
+
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
 
 //////////////////////////////////
 // End explicit class/id styles //
