@@ -50,11 +50,13 @@ The development server should now be live at http://localhost:3000
 ### Interesting and Helpful Resources
 >[ECMAScript and the History of JavaScript][ECMAScriptWikipedia]
 
->[History of CommonJS and Node from the creator of NPM][CommonJSandNode]
+>[History of CommonJS and Node from the Creator of NPM][CommonJSandNode]
 
 >[CommonJS Wikipedia Page][CommonJSWiki]
 
 >[New JavaScript Features in ECMAScript 6][ES6Features]
+
+>[History of Babel Written by it's Creator][BabelHistory]
 
 ### Version
 0.0.1
@@ -78,3 +80,4 @@ The development server should now be live at http://localhost:3000
    [CommonJSandNode]: <https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598>
    [CommonJSWiki]: <https://en.wikipedia.org/wiki/CommonJS>
    [ES6Features]: <https://github.com/lukehoban/es6features>
+   [BabelHistory]: <https://medium.com/@sebmck/2015-in-review-51ac7035e272#.v0sr6m2mw>
