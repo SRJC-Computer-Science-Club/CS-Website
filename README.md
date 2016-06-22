@@ -42,11 +42,15 @@ The development server should now be live at http://localhost:3000
 
 >[JQuery][jquery]
 
+### Todos
+[Link to our Waffle.IO page.][waffle.io]
+
+### Interesting and Helpful Resources
+>[ECMAScript and the History of JavaScript][ECMAScriptWikipedia]
+
 ### Version
 0.0.1
 
-### Todos
-[Link to our Waffle.IO page.][waffle.io]
 
 **Free Software, Hell Yeah!**
 
@@ -61,4 +65,5 @@ The development server should now be live at http://localhost:3000
    [webpack]: <https://webpack.github.io/>
    [jquery]: <http://jquery.com>
    [waffle.io]: <https://waffle.io/SRJC-Computer-Science-Club/CS-Website>
+   [ECMAScriptWikipedia]: <https://en.wikipedia.org/wiki/ECMAScript>
    
