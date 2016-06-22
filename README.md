@@ -1,4 +1,4 @@
-# Santa Rosa Junior College Computer Science Website
+# Santa Rosa Junior College Computer Science Club Website
 
 [Link to live site.][site]
 
