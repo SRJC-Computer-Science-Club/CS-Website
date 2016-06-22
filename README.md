@@ -34,6 +34,8 @@ The development server should now be live at http://localhost:3000
 
 >[React][react]
 
+>[Babel][babel]
+
 >[Webpack][webpack]
 
 >[SASS][sass]
@@ -47,6 +49,12 @@ The development server should now be live at http://localhost:3000
 
 ### Interesting and Helpful Resources
 >[ECMAScript and the History of JavaScript][ECMAScriptWikipedia]
+
+>[History of CommonJS and Node from the creator of NPM][CommonJSandNode]
+
+>[CommonJS Wikipedia Page][CommonJSWiki]
+
+>[New JavaScript Features in ECMAScript 6][ES6Features]
 
 ### Version
 0.0.1
@@ -63,7 +71,10 @@ The development server should now be live at http://localhost:3000
    [bootstrap]: <http://getbootstrap.com/>
    [react]: <https://facebook.github.io/react/>
    [webpack]: <https://webpack.github.io/>
+   [babel]: <https://babeljs.io/>
    [jquery]: <http://jquery.com>
    [waffle.io]: <https://waffle.io/SRJC-Computer-Science-Club/CS-Website>
    [ECMAScriptWikipedia]: <https://en.wikipedia.org/wiki/ECMAScript>
-   
+   [CommonJSandNode]: <https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15432598>
+   [CommonJSWiki]: <https://en.wikipedia.org/wiki/CommonJS>
+   [ES6Features]: <https://github.com/lukehoban/es6features>
