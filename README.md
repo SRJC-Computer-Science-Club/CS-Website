@@ -13,14 +13,19 @@ Install dependencies with:
 ```sh
 $ npm install
 ```
+Or alternatively with:
+```sh
+$ npm i
+```
 
 Start development with dev-{yourOS} script (defined in package.json).
 ```sh
 $ npm run dev-windows
 $ npm run dev-linux
 ```
+You may receive an error when first running the development scripts. If so, restart the scripts.
 
-The development server should be live at http://localhost:3000
+The development server should now be live at http://localhost:3000
 
 ### Tech
 >[Node][node]
