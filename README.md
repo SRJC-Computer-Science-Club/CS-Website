@@ -47,6 +47,8 @@ The development server should now be live at http://localhost:3000
 ### Todos
 [Link to our Waffle.IO page.][waffle.io]
 
+[Link to the Checkvist outline](https://checkvist.com/checklists/563656-csc-cs-site)
+
 ### Interesting and Helpful Resources
 >[ECMAScript and the History of JavaScript][ECMAScriptWikipedia]
 
