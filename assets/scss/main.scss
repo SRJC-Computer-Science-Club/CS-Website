@@ -9,6 +9,7 @@ $black: #222222;
 $blue: rgb(51, 122, 183);
 $red: rgb(217, 83, 79);
 $white: #FEFEFE;
+$lightgray: #EEE;
 
 //////////////////////////////////
 // Begin default DOM tag styles //
@@ -29,6 +30,11 @@ a {
 ////////////////////////////////
 // End default DOM tag styles //
 ////////////////////////////////
+
+
+
+@import 'partials/project_banner';
+
 
 ////////////////////////////////////
 // Begin explicit class/id styles //
@@ -167,3 +173,12 @@ a {
   padding-left: 60px;
 }
 //
+
+
+
+
+//colors
+.lightgray
+{
+  background: $lightgray;
+}
