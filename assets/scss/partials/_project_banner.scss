@@ -2,7 +2,14 @@
 {
 	.project-banner-img
 	{
+		overflow: hidden;
 		padding: 0;
+	}
+
+	.img-crop
+	{
+		width: 200%;
+		margin-left: -50%;
 	}
 
 	.project-banner-headline
@@ -11,7 +18,7 @@
 		bottom: 0px;
 		left: 20px;
 		font-weight: bold;
-		font-size: 5vw;
+		font-size: 4vw;
 		color: white;
 	}
 
@@ -22,4 +29,7 @@
 	}
 }
 
-  
+.card
+{
+	margin-left:0px;
+}
