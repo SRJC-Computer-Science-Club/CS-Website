@@ -46,7 +46,10 @@ a {
   text-align: center;
 }
 
-
+.container-fluid
+{
+  max-width: 1300px;
+}
 //////////////////////////////////
 // End explicit class/id styles //
 //////////////////////////////////
