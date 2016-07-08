@@ -26,3 +26,23 @@ body
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
   // Bootstrap
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity='sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin='anonymous')
+	script.
+		var ws;
+		function socket() {
+		ws = new WebSocket("ws://127.0.0.1:8080");
+		ws.onmessage = function ( e ) {
+		var data = JSON.parse(e.data);
+		if ( data.r ) {
+		location.reload();
+		}
+		};
+		}
+		setInterval(function () {
+		if ( ws ) {
+		if ( ws.readyState !== 1 ) {
+		socket();
+		}
+		} else {
+		socket();
+		}
+		}, 1000);
