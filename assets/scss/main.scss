@@ -10,7 +10,7 @@ $font-stack: 'Droid Sans Mono','Helvetica';
 $black: #222222;
 $blue: rgb(51, 122, 183);
 $red: rgb(217, 83, 79);
-$white: #FEFEFE;
+$white: #FDFDFD;
 $lightgray: #EEE;
 
 //////////////////////////////////
@@ -20,6 +20,7 @@ $lightgray: #EEE;
 body {
   font: 16px $font-stack !important;
   padding-top: 5rem;
+  background: $white;
 }
 
 a {
