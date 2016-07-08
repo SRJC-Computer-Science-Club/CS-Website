@@ -1,18 +1,74 @@
-.navbar
-{
-	padding: 0;
+$navbar-main-height: 60px;
+$navbar-secondary-height: 40px;
+//$navbar-main-bg-color: 
+$navbar-secondary-bg-color: #96afca;
+
+$navbar-main-button-height:48px;
+$navbar-main-button-margin-top: 12px;
+
+
+.navbar {
+    padding: 0;
+    height: $navbar-main-height;
+    &.navbar-secondary {
+        background: $navbar-secondary-bg-color;
+        top: $navbar-main-height;
+        height: $navbar-secondary-height;
+    }
 }
 
-.nav-item
-{
-	a.nav-link
-	{
-		padding: 10px;
-	}		
-
-	&.active
-	{
-		background: gray;
-	}
+.nbw2 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
 }
 
+.navbar-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav-item {
+    margin-top: $navbar-main-button-margin-top;
+
+    a.nav-link {
+        line-height: $navbar-main-button-height;
+        padding: 0 16px;
+    }
+    &.active {
+        background: $navbar-secondary-bg-color;
+        border-radius: 4px 4px 0 0;
+    }
+}
+
+.navbar-brand
+{
+	font-size: 2em;
+	line-height: $navbar-main-button-margin-top + $navbar-main-button-height;
+	padding: 0 16px;
+	margin: 0;
+}
+
+.navbar-secondary {
+    border: 0 solid $white;
+    border-bottom-width: 2px;
+    .nav-item {
+        margin-top: 0;
+        a.nav-link {
+            padding: 0 16px;
+            line-height: $navbar-secondary-height - 8px;
+            color: black;
+        }
+        &.active {
+            height: $navbar-secondary-height;
+            background: $white;
+            //border-radius: 0;
+            height: 32px;
+            a.nav-link {
+                color: black;
+            }
+        }
+    }
+}
