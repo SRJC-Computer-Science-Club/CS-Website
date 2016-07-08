@@ -3,8 +3,10 @@
  *   http://sass-lang.com/
  */
 
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
 // Define SASS variables
-$font-stack: 'Helvetica';
+$font-stack: 'Droid Sans Mono','Helvetica';
 $black: #222222;
 $blue: rgb(51, 122, 183);
 $red: rgb(217, 83, 79);
@@ -16,7 +18,7 @@ $lightgray: #EEE;
 //////////////////////////////////
 
 body {
-  font: 14px $font-stack !important;
+  font: 16px $font-stack !important;
   padding-top: 5rem;
 }
 
