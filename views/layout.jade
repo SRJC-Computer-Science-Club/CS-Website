@@ -10,22 +10,7 @@ head
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css', integrity='sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd', crossorigin='anonymous')
   link(rel='stylesheet', href='css/main.css')
 body
-  nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-    a.navbar-brand(href='#')= title
-    ul.nav.navbar-nav.pull-xs-right
-      li.nav-item.active
-        a.nav-link(href='#') Home
-      li.nav-item
-        a.nav-link(href='#') About
-      li.nav-item
-        a.nav-link(href='#') Contact
-  .container-fluid
-    .starter-template
-      block content
-  // JQuery
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-  // Bootstrap
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity='sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin='anonymous')
+	include ./partials/_navbar
 	script.
 		var ws;
 		function socket() {
