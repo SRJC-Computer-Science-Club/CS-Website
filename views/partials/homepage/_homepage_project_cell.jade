@@ -1,5 +1,6 @@
 .col-md-12.project-banner
-	.row.card
+	//Tablet-Desktop-HD Desktop
+	.row.card.hidden-sm-down
 		.col-lg-9.project-banner-img
 			img.img-fluid(src= 'images/projects/' + project.title.toLowerCase() + '/banner.jpg')
 			h1.project-banner-headline= project.title
@@ -9,3 +10,182 @@
 			a.link(href='/projects/' + project.id )
 		.col-lg-3.project-banner-description
 			include ./_homepage_project_cell-content-picker
+	//Phone landscape sm
+	#device-phone.row.card.hidden-md-up.hidden-xs-down
+		.col-sm-12
+			.row.project-headline
+				.col-sm-8.project-banner-img
+					img.img-fluid(src= 'images/projects/' + project.title.toLowerCase() + '/banner.jpg')
+					h1.project-banner-headline= project.title
+					a.link(href='/projects/' + project.id )
+				.col-sm-4
+					p Members
+					.member
+						if (project.members.length > 0) 
+							each member in project.members
+								p= member.first_name[0] + member.last_name[0]
+						else
+							span no participating members
+			.row.project-status
+				.col-sm-12
+					span= project.status
+			.row.project-post
+				.col-sm-12
+					p.header Most recent post
+					p= project.post == "" ? "Nothing to report" : project.post
+			.row.project-description
+				.col-sm-12
+					p= project.description_short
+			.row.show-more
+				.col-sm-12
+					a(data-toggle="collapse" href="#p"+project.id+"-collapse-landscape" aria-expanded="false" aria-controls="collapseExample") <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></strong> show more
+					.collapse(id="p"+project.id+"-collapse-landscape")
+						.images
+							p.header Images
+							- var projectId = "p"+project.id+"-collapse-landscape-carousel";
+							.carousel.slide(id=projectId data-ride="pause")
+								- var nPages = project.images.length/3;
+								if (nPages > 0)
+									ol.carousel-indicators
+										li.active(data-target="#" +projectId data-slide-to="0")
+										- for ( var page = 1; page < nPages; page++)
+											li(data-target="#" +projectId data-slide-to=page)
+									.carousel-inner(role="listbox")
+										- for ( var page = 0; page < nPages; page ++)
+											if (page == 0)
+												.carousel-item.active
+													.row
+														//TODO DRY
+														- for ( var index = 3 *page; index < 3 + (page *3) && index < project.images.length; index ++)
+															- var image = project.images[index];
+															- var src = "/images/projects/"+project.title.toLowerCase()+"/images/"+image;
+															.col-sm-4
+																a(href="/images/projects/"+project.title.toLowerCase()+"/images/"+image).figure.card
+																	img.figure-img.img-fluid.rounded(src="/images/projects/"+project.title.toLowerCase()+"/images/"+image)
+																	figcaption.figure-caption= image
+											else
+												.carousel-item
+													.row
+														//TODO DRY
+														- for ( var index = 3 *page; index < 3 + (page *3) && index < project.images.length; index ++)
+															- var image = project.images[index];
+															- var src = "/images/projects/"+project.title.toLowerCase()+"/images/"+image;
+															.col-sm-4
+																a(href="/images/projects/"+project.title.toLowerCase()+"/images/"+image).figure.card
+																	img.figure-img.img-fluid.rounded(src="/images/projects/"+project.title.toLowerCase()+"/images/"+image)
+																	figcaption.figure-caption= image
+									a.left.carousel-control(href="#" +projectId role="button" data-slide="prev")
+									a.right.carousel-control(href="#" +projectId role="button" data-slide="next")
+								else
+									span no images
+						.position-requests
+							p.header Position Requests
+							if (project.areaRequests.length > 0)
+								table.table
+									tbody
+										each request in project.areaRequests
+											tr
+												td.title
+													//TODO Request title Link
+													a(href="/projects/"+project.id)= request.title
+												//TODO Tooltips/Popovers
+												- var assets = [];
+												each asset in request.assets
+													- assets.push(asset.title + "— level " + asset.experience + "\n")
+												//TODO Area Request Project Interest
+												- var color = "gray";
+												td(title=assets style=" background-color: " +color)= request.project_interest
+							else
+								span no requests at this moment
+						.events
+							p.header Events
+						
+	//Phone xs
+	#device-phone.row.card.hidden-sm-up
+		.col-xs-12
+			.row.project-headline
+				.col-xs-12.project-banner-img
+					img.img-fluid(src= 'images/projects/' + project.title.toLowerCase() + '/banner.jpg')
+					h1.project-banner-headline= project.title
+					a.link(href='/projects/' + project.id )
+			.row.project-status
+				.col-xs-12
+					span= project.status
+			.row.project-members
+				.col-xs-12
+					p.header Members
+					.member
+						if (project.members.length > 0) 
+							each member in project.members
+								p= member.first_name[0] + member.last_name[0]
+						else
+							span no participating members
+			.row.project-post
+				.col-xs-12
+					p.header Most recent post
+					p= project.post == "" ? "Nothing to report" : project.post
+			.row.project-description
+				.col-xs-12
+					p= project.description_short
+			//TODO DRY
+			.row.show-more
+				.col-sm-12
+					a(data-toggle="collapse" href="#p"+project.id+"-collapse" aria-expanded="false" aria-controls="collapseExample") <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></strong> show more
+					.collapse(id="p"+project.id+"-collapse")
+						.images
+							p.header Images
+							- var projectId = "p"+project.id+"-collapse-carousel";
+							.carousel.slide(id=projectId data-ride="pause")
+								- var nPages = project.images.length;
+								if (nPages > 0)
+									ol.carousel-indicators
+										li.active(data-target="#" +projectId data-slide-to="0")
+										- for ( var page = 1; page < nPages; page++)
+											li(data-target="#" +projectId data-slide-to=page)
+									.carousel-inner(role="listbox")
+										- for ( var page = 0; page < nPages; page ++)
+											if (page == 0)
+												.carousel-item.active
+													.row
+														- var image = project.images[page];
+														- var src = "/images/projects/"+project.title.toLowerCase()+"/images/"+image;
+														.col-xs-12
+															a(href="/images/projects/"+project.title.toLowerCase()+"/images/"+image).figure.card
+																img.figure-img.img-fluid.rounded(src="/images/projects/"+project.title.toLowerCase()+"/images/"+image)
+																figcaption.figure-caption= image
+											else
+												.carousel-item
+													.row
+														- var image = project.images[page];
+														- var src = "/images/projects/"+project.title.toLowerCase()+"/images/"+image;
+														.col-xs-12
+															a(href="/images/projects/"+project.title.toLowerCase()+"/images/"+image).figure.card
+																img.figure-img.img-fluid.rounded(src="/images/projects/"+project.title.toLowerCase()+"/images/"+image)
+																figcaption.figure-caption= image
+									a.left.carousel-control(href="#" +projectId role="button" data-slide="prev")
+									a.right.carousel-control(href="#" +projectId role="button" data-slide="next")
+								else
+									span no images
+						.position-requests
+							p.header Position Requests
+							if (project.areaRequests.length > 0)
+								table.table
+									tbody
+										each request in project.areaRequests
+											tr
+												td.title
+													//TODO Request title Link
+													a(href="/projects/"+project.id)= request.title
+												//TODO Tooltips/Popovers
+												- var assets = [];
+												each asset in request.assets
+													- assets.push(asset.title + "— level " + asset.experience + "\n")
+												//TODO Area Request Project Interest
+												- var color = "gray";
+												td(title=assets style=" background-color: " +color)= request.project_interest
+							else
+								span no requests at this moment
+						.events
+							p.header Events
+					
+			

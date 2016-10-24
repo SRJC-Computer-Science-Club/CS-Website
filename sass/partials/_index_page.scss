@@ -16,10 +16,9 @@
   }
   #join {
     .card {
-      padding: $margin-lg;
+      padding: $margin-sm;
     }
     h3 {
-      position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
@@ -68,6 +67,96 @@
       bottom: 0;
       left: 0;
       right: 0;
+    }
+  }
+  #device-phone {
+    .project-members, .project-status, .project-post, .project-description {
+    padding: $margin-sm 0;
+
+    }
+    .project-headline {
+      background: $gray;
+    }
+    .project-members {
+      background: $gray;
+    }
+    .project-status {
+      background: $light-gray;
+      background: green;
+      color: white;
+    }
+    .project-post {
+      background: $lightgray;
+
+    }
+    .project-description {
+      background: $lightergray;
+
+    }
+    .show-more {
+      background: $lightergray;
+      .images, .position-requests, .events {
+        padding: $margin-sm 0;
+      }
+      .images {
+        .carousel-indicators {
+          bottom: -24px;
+        }
+        .carousel-indicators>li {
+          width: 18px;
+          height: 18px;
+          border-radius: 0;
+          background-color: $light-gray;
+        }
+        .carousel-indicators>li.active {
+          width: 20px;
+          height: 20px;
+          border-radius: 0;
+          background-color: black;
+        }
+        .carousel-item {
+          padding: 0 $margin-lg;
+          .col-sm-4 {
+            padding: 0 $margin-sm;
+          }
+        }
+
+      }
+      .position-requests {
+        .table td.title {
+          font-weight: bold;
+          text-align: left;
+        }
+      }
+      .events {
+
+      }
+
+    }
+    .project-banner-headline {
+      margin: 0;
+      padding-top: $margin-sm;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-weight: bold;
+			font-size: 1.5em;
+			color: black;
+      background: linear-gradient(0, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+    .member {
+      p {
+        width: 24px;
+        height: 24px;
+        float: right;
+        background: $gray-darkgray;
+        border-radius: 30px;
+
+        text-align: center;
+        padding: $margin-xs;
+        margin: $margin-xs 0 0 $margin-xs;
+      }
     }
   }
 }

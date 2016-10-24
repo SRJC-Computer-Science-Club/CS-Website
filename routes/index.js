@@ -4,7 +4,6 @@ var router = express.Router();
 var helper = require('./helper_methods');
 
 router.get('*', function(req, res, next) {
-  //console.log(req.params);
 
   next();
 });
@@ -27,8 +26,14 @@ router.get('/', function(req, res, next) {
     {id: 2, first_name: 'Erick', last_name: 'Sanchez', election: 'Secretary'},
     {id: 3, first_name: 'Oran', last_name: 'C', election: 'ICC Member'}
   ];
+  var projects = tempDB.projects;
 
-  res.render('index', { title: 'CS Club',  projects: tempDB.projects, navbar: navbar, canidates: results });
+  for ( var project of projects) {
+    project.members= findProjectMembers(project);
+    project.areaRequests= findProjectAreaRequests(project);
+  }
+
+  res.render('index', { title: 'CS Club',  projects: projects, navbar: navbar, canidates: results });
 });
 
 
@@ -116,8 +121,9 @@ router.get('/testing', function(req, res, next) {
     links: [
     { name: 'ITEM',  url: '#'  },
   ]};
+  var projects = tempDB.projects;
 
-  res.render('testing', { title: 'testing', navbar: navbar });
+  res.render('testing', { title: 'testing', projects: projects, navbar: navbar });
 });
 
 
@@ -169,7 +175,6 @@ function findProjectMembers( project )
 {
   var members = [];
 
-  console.log( tempDB.members_projects);
   for( var member_project of tempDB.members_projects )
   {
     if ( member_project.project_id == project.id )
@@ -188,11 +193,28 @@ function findProjectMembers( project )
 
 
 
+function findProjectAreaRequests( project )
+{
+  var requests = [];
+
+  for ( var area_request of tempDB.project_area_requests )
+  {
+    if (project.id == area_request.project_id)
+    {
+      requests.push(area_request);
+    }
+  }
+
+  return requests;
+}
+
+
+
 function findProjectsForMember( member )
 {
   var projects = [];
 
-  for( var member_project of tempDB.members_projects )
+  for ( var member_project of tempDB.members_projects )
   {
       if ( member_project.member_id == member.id )
       {

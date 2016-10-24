@@ -47,5 +47,7 @@ resources/
 resources/view.sketch
 
 # testing page
+
 sass/partials/_testing_page.scss
+
 views/testing.jade

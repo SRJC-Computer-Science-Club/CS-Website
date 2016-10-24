@@ -5,7 +5,7 @@
 				img.img-fluid(src='/images/projects/' + project.title.toLowerCase() + '/cover.jpg' style="width: 100%")
 		.row
 			.col-xs-12
-				p= project.description
+				p!= project.description
 	.col-sm-2
 		each index in [1,2,3,4]
 			.col-xs-12.card(style='padding: 0')

@@ -20,3 +20,15 @@ nav.navbar.navbar-fixed-top.navbar-dark.navbar-secondary
 				each link, index in navbar.links
 					li.nav-item(class= link.active === true ? 'active' : '')
 						a.nav-link(href=link.url)= link.name
+			.row
+				.col-sm-12
+					.hidden-sm-up
+						p xs mobile 
+					.hidden-xs-down.hidden-md-up
+						p sm mobile landscape 
+					.hidden-sm-down.hidden-lg-up
+						p md tablet 
+					.hidden-md-down.hidden-xl-up
+						p lg desktop 
+					.hidden-lg-down
+						p xl HD desktop 
