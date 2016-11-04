@@ -11,7 +11,6 @@ Want to contribute? Great!
 
 **Be sure to have [Node][node](6.3.x) installed.**
 
-Open terminal/cmd in root directory of project.
 
 Install project dependencies with:
 ```sh
