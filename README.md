@@ -1,4 +1,4 @@
-# SRJC Computer Science Club Website
+# SRJC Computer Science Club-Website
 
 [Link to live site][site]
 
