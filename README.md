@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/SRJC-Computer-Science-Club/CS-Website.png?label=todo&title=Todo)](http://waffle.io/SRJC-Computer-Science-Club/CS-Website) [![Stories in Ready](https://badge.waffle.io/SRJC-Computer-Science-Club/CS-Website.png?label=in+progress&title=In-Progress)](http://waffle.io/SRJC-Computer-Science-Club/CS-Website)
+
 # SRJC Computer Science Club Website
 
 [Link to live site][site]
