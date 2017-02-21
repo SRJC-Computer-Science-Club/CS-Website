@@ -1,0 +1,13 @@
+a.members-grid {
+  @extend .float-xs-left;
+  font-size: .75em;
+  margin: $margin-sm;
+  margin-bottom: $margin-sm;
+  padding: $margin-xs $margin-md;
+  background-color: $gray;
+  border-radius: 16px;
+
+}
+a.members-grid:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,16 @@
+if (block_requests.length > 0)
+  table.table
+    tbody
+      each request in block_requests
+        tr
+          td.title
+            p
+              a(href="/projects/"+project.id+"#areaRequest-list")= request.title
+          //TODO Tooltips/Popovers
+          - var assets = [];
+          each asset in request.assets
+            - assets.push(asset.title + "— level " + asset.experience + "\n")
+          td(title=assets style=" background-color: " +request.project_interest_color)
+            p!= helper.pluralize('position', request.nPositions, true)
+else
+  span no current requests at this moment

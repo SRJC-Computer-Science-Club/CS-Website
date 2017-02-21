@@ -49,9 +49,15 @@
 			}
     }
     #project-cell-content-picker {
-      p {
-        font-size: .75em;
+      .table {
+        margin-bottom: 0;
       }
+      p {
+        text-align: center;
+        font-size: .75em;
+        margin-bottom: 0;
+      }
+      margin-bottom: $margin-md;
 
     }
     .link {
@@ -112,16 +118,6 @@
           .col-sm-4 {
             padding: 0 $margin-sm;
           }
-        }
-
-      }
-      .position-requests, .events {
-        .table {
-          margin-bottom: 0;
-        }
-        .table td.title {
-          font-weight: bold;
-          text-align: left;
         }
 
       }

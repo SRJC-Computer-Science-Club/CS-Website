@@ -1,13 +1,13 @@
 //Tablet-Desktop-HD Desktop
 .row.card.project-banner.hidden-sm-down
-	.col-lg-9.project-banner-img
+	.col-lg-8.project-banner-img
 		img.img-fluid(src= 'images/projects/' + project.title.toLowerCase() + '/banner.jpg')
 		h1.project-banner-headline= project.title
 		.project-cell
 			h3= project.post
 			p.status= project.status	
 		a.link(href='/projects/' + project.id )
-	.col-lg-3.project-banner-description
+	.col-lg-4.project-banner-description
 		include ./_homepage_project_cell-content-picker
 //Phone landscape sm
 #device-phone.row.card.project-banner.hidden-md-up.hidden-xs-down
@@ -79,32 +79,12 @@
 								span no images
 					.position-requests
 						p.header Position Requests
-						if (project.areaRequests.length > 0)
-							table.table
-								tbody
-									each request in project.areaRequests
-										tr
-											td.title
-												a(href="/projects/"+project.id+"#areaRequest-list")= request.title
-											//TODO Tooltips/Popovers
-											- var assets = [];
-											each asset in request.assets
-												- assets.push(asset.title + "— level " + asset.experience + "\n")
-											td(title=assets style=" background-color: " +request.project_interest_color)!= helper.pluralize('position', request.nPositions, true)
-						else
-							span no current requests at this moment
+						- var block_requests = project.areaRequests
+						include ../../partials/atoms/area_requests-table
 					.events
 						p.header Events
-						if (project.events.length > 0)
-							table.table
-								tbody
-									each event in project.events
-										tr
-											td.title
-												a(href="/events/"+event.id)= event.title
-											td= event.date_range
-						else
-							span no listed events
+						- var block_events = project.events
+						include ../../partials/atoms/events-table
 					
 //Phone xs
 #device-phone.row.card.project-banner.hidden-sm-up

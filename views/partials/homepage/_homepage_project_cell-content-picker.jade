@@ -1,3 +1,29 @@
 #project-cell-content-picker
-  h2 Description
-  p= project.description_short
+  .tab-content
+    //Description
+    .tab-pane(id=p+"content-description" role="tabpanel")
+      a(data-toggle="tab" href="#"+p+"content-members" role="tab")
+        h2 Description
+      p= project.description_short
+    //Members
+    .tab-pane(id=p+"content-members" role="tabpanel")
+      a(data-toggle="tab" href="#"+p+"content-positions" role="tab")
+        h2 Members
+      - var block_members = project.members
+      .scroll-y(style="max-height: 132px;")
+        include ../../partials/atoms/members-grid
+    //Area Requests
+    .tab-pane.active(id=p+"content-positions" role="tabpanel")
+      a(data-toggle="tab" href="#"+p+"content-events" role="tab")
+        h2 Area Requests
+      - var block_requests = project.areaRequests
+      .scroll-y(style="max-height: 132px;")
+        include ../../partials/atoms/area_requests-table
+    //Events
+    .tab-pane(id=p+"content-events" role="tabpanel")
+      a(data-toggle="tab" href="#"+p+"content-description" role="tab")
+        h2 Events
+      - var block_events = project.events
+      .scroll-y(style="max-height: 132px;")
+        include ../../partials/atoms/events-table
+    

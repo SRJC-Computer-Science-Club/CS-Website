@@ -2,5 +2,6 @@
 	.col-lg-12
 		h1 Project Spotlight
 		each project in projects
+			- var p = "p"+project.id+"-";
 			include ./_homepage_project_cell
 hr

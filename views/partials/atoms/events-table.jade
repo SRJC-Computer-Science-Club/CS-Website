@@ -1,0 +1,12 @@
+if (block_events.length > 0)
+  table.table
+    tbody
+      each event in block_events
+        tr
+          td.title
+            p
+              a(href="/events/"+event.id)= event.title
+          td
+            p= event.date_range
+else
+  span no current events
